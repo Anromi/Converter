@@ -10,6 +10,25 @@ import java.io.IOException;
 @RequestMapping("/converter")
 public class ConverterController {
 
-
+    @GetMapping("/convertKtoC/{in}")
+    public String convertKtoC(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = Double.parseDouble(in.replace(",", ".")) - 273.15D;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
+    @GetMapping("/convertKtoF/{in}")
+    public String convertKtoF(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = (Double.parseDouble(in.replace(",", ".")) - 273.15D) * 9 / 5 + 32;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
 
 }
