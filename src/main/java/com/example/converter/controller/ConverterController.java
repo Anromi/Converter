@@ -30,5 +30,25 @@ public class ConverterController {
             return "пожалуйста, напишите число правильно";
         }
     }
+    @GetMapping("/convertFtoC/{in}")
+    public String convertFtoC(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = (Double.parseDouble(in.replace(",", "."))  - 32) * 5 / 9;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
+    @GetMapping("/convertFtoK/{in}")
+    public String convertFtoK(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = (Double.parseDouble(in.replace(",", ".")) - 32) * 5 / 9 + 273.15D;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
 
 }
