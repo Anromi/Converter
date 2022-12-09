@@ -50,5 +50,26 @@ public class ConverterController {
             return "пожалуйста, напишите число правильно";
         }
     }
+    @GetMapping("/convertCtoK/{in}")
+    public String convertCtoK(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = Double.parseDouble(in.replace(",", ".")) + 273.15D;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
+
+    @GetMapping("/convertCtoF/{in}")
+    public String convertCtoF(@PathVariable(name = "in") String in
+    ) throws IOException {
+        try {
+            double newX = Double.parseDouble(in.replace(",", ".")) * 9 / 5 + 32;
+            return ""+newX;
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
+    }
 
 }
