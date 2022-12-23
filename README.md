@@ -26,3 +26,8 @@ http://localhost:9001/converter/{convertFromTo}/{in}
 docker build -t converter .
 docker run -it --rm -p 9001:9001 converter   
 ```
+```dev:```
+[![Tests](https://github.com/Anromi/Converter/actions/workflows/gradle-test.yml/badge.svg?branch=develop)]
+
+```main:```
+[![Tests](https://github.com/Anromi/Converter/actions/workflows/gradle-test.yml/badge.svg?branch=main)]
